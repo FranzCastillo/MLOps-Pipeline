@@ -1,0 +1,29 @@
+version: "3.9"
+services:
+  data-engineering:
+    build:
+      context: ./data-engineering
+      dockerfile: Dockerfile
+    volumes:
+      - ./shared:/shared
+    command: ["python", "pipeline_preprocessing.py"]
+
+  data-science:
+    build:
+      context: ./data-science
+      dockerfile: Dockerfile
+    volumes:
+      - ./shared:/shared
+    depends_on:
+      - data-engineering
+    command: ["python", "pipeline_training.py"]
+
+  model-evaluation:
+    build:
+      context: ./data-science
+      dockerfile: Dockerfile
+    volumes:
+      - ./shared:/shared
+    depends_on:
+      - data-science
+    command: ["python", "evaluate_model.py"]
