@@ -27,3 +27,9 @@ La arquitectura de este proyecto separa los procesos de ingeniería de datos y c
 
 ### Comandos para Desplegar Docker con Terraform
 Podemos ver la documentación en este [enlace](https://registry.terraform.io/providers/kreuzwerker/docker/latest/docs).
+
+## Conclusiones
+- Reproducibilidad y consistencia: garantiza que los entornos de Data Engineering, Data Science y producción se levanten siempre con la misma configuración, reduciendo errores humanos y problemas de “funciona en mi máquina”.
+- Escalabilidad controlada: permite definir en código cómo escalar recursos, lo que facilita aumentar capacidad de cómputo para entrenamiento de modelos o reducirla en etapas de prueba.
+- Automatización y eficiencia operativa: elimina procesos manuales de configuración, acelerando la creación y destrucción de entornos de ETL y experimentación, lo que da más agilidad al ciclo de vida del ML.
+- Trazabilidad y versionamiento: cada cambio en la infraestructura queda registrado en el código, permitiendo auditar quién, cuándo y cómo se modificaron los recursos.
