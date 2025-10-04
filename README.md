@@ -1,0 +1,29 @@
+# Taller 6
+- Francisco Castillo - 21562
+- Diego Lemus - 21469 
+- José Kiesling -
+
+El código de este entregable puede encontrarse en el siguiente [repositorio](https://github.com/FranzCastillo/MLOps-Pipeline/tree/Docker).
+
+## Documentación de Terraform y Docker
+Terraform ofrece un tutorial de 7 pasos para poder desarrollar IaC en el siguiente [enlace](https://developer.hashicorp.com/terraform/tutorials/docker-get-started).
+
+## Diseño de la Arquitectura
+La arquitectura de este proyecto separa los procesos de ingeniería de datos y ciencia de datos utilizando contenedores Docker gestionados por Terraform. Los componentes principales son:
+- `data-engineering/`: contiene el código y dependencias para la preparación de datos. Genera artefactos como dataset.pkl y preprocessor.pkl en la carpeta compartida.
+- `data-science/`: incluye el código y dependencias para el entrenamiento y evaluación de modelos. Utiliza los artefactos de la carpeta compartida y produce el modelo entrenado model.pkl.
+- `shared/`: almacena los archivos intercambiados entre los procesos de ingeniería y ciencia de datos.
+- `main.tf`: define la infraestructura, los contenedores Docker y sus dependencias, asegurando que el proceso de ciencia de datos espere a que finalice el de ingeniería de datos.
+- `docker-compose.yml`: alternativa para orquestar los contenedores localmente durante el desarrollo y pruebas.
+
+### Creación del Ambiente
+![Creación de Contenedores](docs/imgs/ss1.png)
+![Contenedores Activos](docs/imgs/ss2.png)
+
+### Imagenes de Docker Hub
+- [data-science](https://hub.docker.com/repository/docker/franzcastillo/data-science/general)
+- [data-engineering](https://hub.docker.com/repository/docker/franzcastillo/data-engineering/general)
+- [model-evaluation](https://hub.docker.com/repository/docker/franzcastillo/model-evaluation/general)
+
+### Comandos para Desplegar Docker con Terraform
+Podemos ver la documentación en este [enlace](https://registry.terraform.io/providers/kreuzwerker/docker/latest/docs).
