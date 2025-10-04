@@ -43,7 +43,7 @@ La arquitectura de este proyecto separa los procesos de ingeniería de datos y c
 
 ### Creación del Ambiente
 ![Creación de Contenedores](docs/imgs/ss1.png)
-![Contenedores Activos](docs/imgs/ss2.png)
+![Contenedores Activos](docs/imgs/SS2.png)
 
 ### Imagenes de Docker Hub
 - [data-science](https://hub.docker.com/repository/docker/franzcastillo/data-science/general)
