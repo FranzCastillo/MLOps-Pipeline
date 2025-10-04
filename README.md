@@ -5,6 +5,31 @@
 
 El código de este entregable puede encontrarse en el siguiente [repositorio](https://github.com/FranzCastillo/MLOps-Pipeline/tree/Docker).
 
+
+## Tutorial de instalación y configuración 
+
+### Instalación
+
+```choco install terraform```
+
+![alt text](image.png)
+
+``` touch ~/.bashrc ```
+
+``` terraform -install-autocomplete ```
+
+## Configuración
+
+``` terraform -v ```
+
+``` terraform init ```
+
+``` terraform plan ```
+
+``` terraform apply ```
+
+``` terraform destroy ```
+
 ## Documentación de Terraform y Docker
 Terraform ofrece un tutorial de 7 pasos para poder desarrollar IaC en el siguiente [enlace](https://developer.hashicorp.com/terraform/tutorials/docker-get-started).
 
